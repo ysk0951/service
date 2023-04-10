@@ -6,113 +6,57 @@
  */
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+import {Text, View} from 'react-native';
+const Col = ({numRows, children}) => {
+  return <View style={styles[`${numRows}col`]}>{children}</View>;
+};
+const Row = ({children}) => <View style={styles.row}>{children}</View>;
+function App(): JSX.Element {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    <View style={styles.app}>
+      <Row>
+        <Col numRows={2}>
+          <Text>First column</Text>
+        </Col>
+        <Col numRows={2}>
+          <Text>Second column</Text>
+        </Col>
+      </Row>
     </View>
   );
 }
 
-function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+const styles = {
+  app: {
+    flex: 4, // the number of columns you want to devide the screen into
+    marginHorizontal: 'auto',
+    width: 400,
+    // backgroundColor: 'red',
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+  row: {
+    flexDirection: 'row',
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
+  '1col': {
+    backgroundColor: 'lightblue',
+    borderColor: '#fff',
+    borderWidth: 1,
+    flex: 1,
   },
-  highlight: {
-    fontWeight: '700',
+  '2col': {
+    backgroundColor: 'green',
+    borderColor: '#fff',
+    borderWidth: 1,
+    flex: 3,
   },
-});
+  '3col': {
+    backgroundColor: 'orange',
+    borderColor: '#fff',
+    borderWidth: 1,
+    flex: 3,
+  },
+  '4col': {
+    flex: 4,
+  },
+};
 
 export default App;
