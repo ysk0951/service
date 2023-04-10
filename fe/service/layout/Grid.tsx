@@ -15,10 +15,14 @@ const styles = {
     flex: 1,
   },
   '2col': {
-    backgroundColor: 'green',
+    // backgroundColor: 'green',
     borderColor: '#fff',
     borderWidth: 1,
     flex: 3,
+    fontSize: '1rem',
+    paddingTop: 20,
+    paddingBottom: 20,
+    alignItems: 'center',
   },
   '3col': {
     backgroundColor: 'orange',

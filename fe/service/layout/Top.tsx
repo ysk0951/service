@@ -5,10 +5,10 @@ const Top = () => {
   return (
     <Row>
       <Col numRows={2}>
-        <Text>1</Text>
+        <Text>강사모 애견 호텔비교서비스</Text>
       </Col>
       <Col numRows={2}>
-        <Text>Second column</Text>
+        <Text>4월 첫주차</Text>
       </Col>
     </Row>
   );
