@@ -1,7 +1,10 @@
 export interface ICol {
   numRows: number;
-  children: React.Component;
+  children?: JSX.Element;
 }
 export interface IRow {
-  children: React.Component;
+  children?: JSX.Element;
+}
+export interface ISelectMenu {
+  menu: String;
 }
