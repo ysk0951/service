@@ -1,4 +1,3 @@
-import {createAction, handleActions} from 'redux-action';
 //Init
 const initState = {
   selectMenu: '',
@@ -7,13 +6,13 @@ const initState = {
 const MENU_STAT = 'menu/SELECT_MENU';
 
 //Action
-export const selectMenu = createAction(MENU_STAT);
+// export const selectMenu = createAction(MENU_STAT);
 
 //Handler
-const menu = handleActions(
-  {
-    [MENU_STAT]: (state, action) => state,
-  },
-  initState,
-);
-export default menu;
+// const menu = handleActions(
+//   {
+//     [MENU_STAT]: (state, action) => state,
+//   },
+//   initState,
+// );
+export default {};
