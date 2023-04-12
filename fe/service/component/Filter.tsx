@@ -1,13 +1,15 @@
 import * as React from 'react';
 import {Col, Row} from './Grid';
-import {Text} from 'native-base';
+// import {Button} from 'native-base';
+// import Icon from 'react-native-vector-icons';
 const Filter = () => {
   return (
     <Row>
-      <Col numRows={3}>
-        <Text fontSize="lg" alignItems="center">
-          필터
-        </Text>
+      <Col numRows={2}>
+        {/* <Button colorScheme="success" variant="solid"> */}
+        {/* <Icon name="ios-person" size={30} color="#4F8EF7" /> */}
+        {/* 필터 */}
+        {/* </Button> */}
       </Col>
     </Row>
   );

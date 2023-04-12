@@ -1,7 +1,6 @@
-import {createAction, createReducer} from 'redux-action';
-import ISelectMenu from '../interface/interface';
+import {createAction, handleActions} from 'redux-action';
 //Init
-const initState: ISelectMenu = {
+const initState = {
   selectMenu: '',
 };
 //Type
@@ -10,10 +9,11 @@ const MENU_STAT = 'menu/SELECT_MENU';
 //Action
 export const selectMenu = createAction(MENU_STAT);
 
-//reducer
-const menu = createReducer(initState, {
-  [MENU_STAT]: (state, action) => {
-    state;
+//Handler
+const menu = handleActions(
+  {
+    [MENU_STAT]: (state, action) => state,
   },
-});
+  initState,
+);
 export default menu;

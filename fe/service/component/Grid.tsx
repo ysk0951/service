@@ -19,7 +19,6 @@ const styles: any = {
   '2col': {
     // backgroundColor: 'green',
     borderColor: 'orange',
-    backgroundColor: 'lightblue',
     borderWidth: 1,
     flex: 1,
     paddingTop: 20,
